@@ -26,7 +26,7 @@ namespace asmsalad {
 
 
 	// Calculate square root of num.
-	inline float sqrt(float num) {
+	inline float fsqrt(float num) {
 
 		#ifdef COMP_MSVC
 
@@ -71,7 +71,7 @@ namespace asmsalad {
 
 
 	// Calculate sine of num.
-	inline float sin(float num) {
+	inline float fsin(float num) {
 
 		#ifdef COMP_MSVC
 
@@ -92,7 +92,7 @@ namespace asmsalad {
 
 
 	// Calculate cosine of num.
-	inline float cos(float num) {
+	inline float fcos(float num) {
 
 		#ifdef COMP_MSVC
 
@@ -113,7 +113,7 @@ namespace asmsalad {
 
 
 	// Calculate tangent of num.
-	inline float tan(float num) {
+	inline float ftan(float num) {
 
 		float num2 = num;
 
