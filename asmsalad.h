@@ -3,7 +3,7 @@
 
 // TO-DO Find compiler using macros.
 #ifdef _MSC_VER
-#define COMP_COMP_MSVC
+#define COMP_MSVC
 #endif
 
 namespace asmsalad {
