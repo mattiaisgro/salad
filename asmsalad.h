@@ -125,8 +125,7 @@ namespace asmsalad {
 			fld num
 			fsin
 			fst num
-		}
-		__asm {
+
 			fld num2
 			fcos
 			fst num2
@@ -140,28 +139,6 @@ namespace asmsalad {
 		#endif
 
 		return num / num2;
-	}
-
-
-	// Returns the absolute value of num.
-	inline float fabs(float num) {
-
-		#ifdef COMP_MSVC
-
-		__asm {
-			fld num
-			fabs
-			fst num
-		}
-
-		#else
-
-		asm("fabs" : "+t"(num));
-
-		#endif
-
-		return num;
-
 	}
 
 
@@ -187,60 +164,6 @@ namespace asmsalad {
 	}
 
 
-	// Executes an invalid instruction.
-	inline void ud2() {
-
-		#ifdef COMP_MSVC
-
-		__asm {
-			ud2
-		}
-
-		#else
-
-		asm("ud2");
-
-		#endif
-
-	}
-
-
-	// No operation on FPU.
-	inline void fnop() {
-
-		#ifdef COMP_MSVC
-
-		__asm {
-			fnop
-		}
-
-		#else
-
-		asm("fnop");
-
-		#endif
-
-	}
-
-
-	// Wait the FPU to handle all exceptions.
-	inline void fwait() {
-
-		#ifdef COMP_MSVC
-
-		__asm {
-			fwait
-		}
-
-		#else
-
-		asm("fwait");
-
-		#endif
-
-	}
-
-
 	// Trap to debugger (int 3).
 	inline void int3() {
 
@@ -258,7 +181,6 @@ namespace asmsalad {
 
 	}
 
-	// Float type-punning functionss
 	// Platform dependent, undefined behavior and unsecure: that's how we do.
 
 	// Set sign of float pointed to by f.
