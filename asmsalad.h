@@ -133,6 +133,8 @@ namespace asmsalad {
 
 		#else
 
+		//asm("fsincos" : "+t"(num, num2));
+
 		asm("fsin" : "+t"(num));
 		asm("fcos" : "+t"(num2));
 
@@ -181,6 +183,7 @@ namespace asmsalad {
 
 	}
 
+	// Float type-punning functions.
 	// Platform dependent, undefined behavior and unsecure: that's how we do.
 
 	// Set sign of float pointed to by f.
@@ -206,6 +209,36 @@ namespace asmsalad {
 		punner.parts.mantissa = mantissa;
 		*f = punner.f;
 	}
+
+
+	// Bit twiddling
+
+	// Return the lower nibble of the given byte.
+	inline char get_lower_nibble(char c) {
+
+		return c & 0x0F;
+	}
+
+	// Return the higher nibble of the given byte.
+	inline char get_higher_nibble(char c) {
+
+		return c >> 4;
+	}
+
+	// Clear nth bit of given byte.
+	template<typename T>
+	inline T bit_clear(T t, unsigned int n) {
+
+		return (t & ~(1 << n));
+	}
+
+	// Set nth bit of given byte.
+	template<typename T>
+	inline T bit_set(T t, unsigned int n) {
+
+		return (t | (1 << n));
+	}
+
 
 }
 
