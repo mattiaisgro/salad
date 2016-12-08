@@ -3,7 +3,7 @@
 
 using namespace asmsalad;
 
-// An example usage of the functions.
+// An example usage of the header.
 
 int main(int argc, char const *argv[]) {
 
@@ -11,8 +11,9 @@ int main(int argc, char const *argv[]) {
 
 	float num;
 
+	std::cout << "Enter a number: ";
 	std::cin >> num;
-	std::cout << "The square root of 2 is " << invsqrt_fast(num) << std::endl;
+	std::cout << "The inverse square root of " << num << " is: " << invsqrt_fast(num) << std::endl;
 
 	return 0;
 }

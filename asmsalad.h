@@ -72,7 +72,7 @@ namespace asmsalad {
 	}
 
 
-	// Calculate inverse square root of num using the fast square root method.
+	// Calculate inverse square root of num using the fast inverse square root method.
 	inline float invsqrt_fast(float num) {
 
 		float buff = num;
@@ -82,6 +82,7 @@ namespace asmsalad {
 
 		num = num * (1.5f - ((buff / 2.f) * num * num));
 		num = num * (1.5f - ((buff / 2.f) * num * num));
+		num = num * (1.5f - ((buff / 2.f) * num * num)); // Three iterations for better precision.
 
 		return num;
 	}
