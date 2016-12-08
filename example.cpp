@@ -8,7 +8,11 @@ using namespace asmsalad;
 int main(int argc, char const *argv[]) {
 
 	std::cout.precision(10);
-	std::cout << "The square root of 2 is " << sqrt(2.f) << std::endl;
+
+	float num;
+
+	std::cin >> num;
+	std::cout << "The square root of 2 is " << invsqrt_fast(num) << std::endl;
 
 	return 0;
 }

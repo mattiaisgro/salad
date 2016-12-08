@@ -24,6 +24,8 @@ namespace asmsalad {
 
 	};
 
+	#define TYPE_PUN(TYPE, VAR) (*(TYPE*) &VAR)
+
 
 	// Calculate square root of num.
 	inline float fsqrt(float num) {
@@ -67,6 +69,21 @@ namespace asmsalad {
 
 		return num / buff;
 
+	}
+
+
+	// Calculate inverse square root of num using the fast square root method.
+	inline float invsqrt_fast(float num) {
+
+		float buff = num;
+		int i = TYPE_PUN(int, num);
+		i = 0x5f3759df - (i >> 1);
+		num = TYPE_PUN(float, i);
+
+		num = num * (1.5f - ((buff / 2.f) * num * num));
+		num = num * (1.5f - ((buff / 2.f) * num * num));
+
+		return num;
 	}
 
 
