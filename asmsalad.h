@@ -1,6 +1,8 @@
 #ifndef _ASMSALAD_H
 #define _ASMSALAD_H
 
+#include "langsalad.h"
+
 // TO-DO Find compiler using macros.
 #ifdef _MSC_VER
 #define COMP_MSVC
@@ -23,9 +25,6 @@ namespace asmsalad {
 		} parts;
 
 	};
-
-	#define TYPE_PUN(TYPE, VAR) (*(TYPE*) &VAR)
-
 
 	// Calculate square root of num.
 	inline float fsqrt(float num) {
