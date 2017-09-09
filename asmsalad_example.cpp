@@ -1,7 +1,7 @@
 #include "asmsalad.h"
 #include <iostream>
 
-using namespace asmsalad;
+using namespace salad;
 
 // An example usage of the header.
 
@@ -13,7 +13,7 @@ int main(int argc, char const *argv[]) {
 
 	std::cout << "Enter a number: ";
 	std::cin >> num;
-	std::cout << "The inverse square root of " << num << " is: " << invsqrt_fast(num) << std::endl;
+	std::cout << f2xm1(num) << std::endl;
 
 	return 0;
 }
